@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KnitBridge · Vetted Tiruppur Mills</title>
+<meta name="description" content="Custom knit fabric and apparel from vetted Tiruppur mills, for small and growing brands. Low MOQ, signed spec sheets, pay the mill directly.">
+<style>
+:root{--bg:#fbfaf7;--card:#fff;--ink:#1d1b18;--muted:#6b665e;--line:#e7e2d9;--brand:#1f6f5c;--brand-ink:#fff;--accent:#f3efe6;--ok:#1f6f5c;--err:#b3261e}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141412;--card:#1c1c19;--ink:#efece6;--muted:#a39e94;--line:#2e2d29;--brand:#4fb399;--brand-ink:#0d1f1a;--accent:#22221e;--ok:#4fb399;--err:#f2867d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--brand)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.3px}
+.logo span{color:var(--brand)}
+nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-size:15px}
+.hero{padding:48px 0 36px}
+.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.1;letter-spacing:-1px;margin:0 0 16px;max-width:760px}
+.hero p{font-size:18px;color:var(--muted);max-width:640px;margin:0 0 26px}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;background:var(--brand);color:var(--brand-ink);text-decoration:none;font-weight:600;border:0;font-size:16px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{background:var(--accent);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--muted)}
+section{padding:40px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;letter-spacing:-.5px;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 26px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.steps{counter-reset:s;display:grid;gap:12px}
+.step{display:flex;gap:14px;align-items:flex-start}
+.step:before{counter-increment:s;content:counter(s);flex:0 0 32px;height:32px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:700}
+.step b{display:block}
+.step span{color:var(--muted);font-size:15px}
+.two{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.two ul{margin:10px 0 0;padding-left:18px}
+.two li{margin:8px 0;font-size:15px}
+.tag{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--brand);margin-bottom:4px}
+.pool{background:var(--accent);border:1px solid var(--line);border-radius:14px;padding:22px}
+.swatches{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.sw{width:38px;height:38px;border-radius:8px;border:1px solid rgba(0,0,0,.08)}
+form{display:grid;gap:14px}
+.row{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+label small{font-weight:400;color:var(--muted)}
+input,select,textarea{font:inherit;padding:11px 12px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--ink);width:100%}
+textarea{min-height:96px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px}
+.check input{width:auto;margin-top:3px}
+.hp{position:absolute;left:-9999px}
+.msg{padding:12px 14px;border-radius:9px;font-size:15px;display:none}
+.msg.ok{display:block;background:var(--accent);border:1px solid var(--ok);color:var(--ok)}
+.msg.err{display:block;background:var(--accent);border:1px solid var(--err);color:var(--err)}
+.tabs{display:flex;gap:8px;margin-bottom:18px}
+.tabs button{flex:1;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
+.tabs button.on{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--muted);margin:8px 0 0}
+footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:560px){nav{display:none}.btn.ghost{margin:10px 0 0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="logo">Knit<span>Bridge</span></div>
+  <nav><a href="#how">How it works</a><a href="#trust">Guarantees</a><a href="#pool">Shade pool</a><a href="#quote">Get a quote</a></nav>
+</header>
+
+<div class="hero">
+  <h1>Custom fabric &amp; apparel from vetted Tiruppur mills, even for small brands.</h1>
+  <p>Tell us what you need in plain words. We turn it into a mill-ready spec, get you 2–3 quotes in 48 hours, and stay with your order until it reaches your door. You pay the mill directly. The mill pays our fee.</p>
+  <a class="btn" href="#quote">Get a free quote</a><a class="btn ghost" href="#quote" data-tab="mill">I run a mill</a>
+  <div class="chips">
+    <span class="chip">Interlock · jersey · fleece · rib</span><span class="chip">Tees · hoodies · polos · baby wear</span><span class="chip">Rotary &amp; digital print</span><span class="chip">Custom labels &amp; packaging</span><span class="chip">MOQ from 50 pcs / 50 kg</span>
+  </div>
+</div>
+
+<section>
+  <h2>Why small brands get stuck</h2>
+  <p class="sub">We kept seeing the same four problems, so we built the process around fixing them.</p>
+  <div class="grid">
+    <div class="card"><h3>Ghosting</h3><p>Mills ignore small enquiries or go quiet after the advance.</p></div>
+    <div class="card"><h3>MOQ walls</h3><p>You need 20 kg a colour; the mill needs 50+.</p></div>
+    <div class="card"><h3>Sample ≠ bulk</h3><p>The shade, GSM or print drifts in production and nobody owns it.</p></div>
+    <div class="card"><h3>Hidden costs</h3><p>Screen charges, freight and GST show up after you've said yes.</p></div>
+  </div>
+</section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <p class="sub">Same five steps for every order.</p>
+  <div class="steps">
+    <div class="step"><div><b>Share your requirement</b><span>Photos and plain words are fine. We work out the Pantone codes, GSM and print method with you.</span></div></div>
+    <div class="step"><div><b>Indicative price in 24 hrs, firm quotes in 48 hrs</b><span>From 2–3 vetted mills, as landed cost: fabric, print, freight and GST on separate lines.</span></div></div>
+    <div class="step"><div><b>Sample / lab dip approval</b><span>A small sample fee, adjusted against your order. Your approval freezes the spec.</span></div></div>
+    <div class="step"><div><b>Production, with updates</b><span>Advance goes straight to the mill. We chase the mill, so you don't have to.</span></div></div>
+    <div class="step"><div><b>Pre-dispatch check, then balance</b><span>Photos, video and a GSM test before you pay the balance. Approved designs are kept on record for repeats.</span></div></div>
+  </div>
+</section>
+
+<section id="trust">
+  <h2>Written guarantees, for both sides</h2>
+  <p class="sub">A signed spec sheet takes the guesswork out of the deal for both buyer and mill.</p>
+  <div class="two">
+    <div class="card"><span class="tag">For buyers</span><h3>Your money and design are safe</h3><ul>
+      <li>Only mills we've verified: GST checked, factory video call, certificates.</li>
+      <li>You pay the mill directly in stages. We never hold your money.</li>
+      <li>Signed spec sheet: GSM ±5%, shade matched to your approved lab dip, shrinkage and fastness grades.</li>
+      <li>One landed price per order, with no surprise charges.</li>
+      <li>Your designs stay yours. They're kept on record for your repeats and never sold to others.</li>
+    </ul></div>
+    <div class="card"><span class="tag">For mills</span><h3>Only serious, complete orders</h3><ul>
+      <li>Every enquiry arrives complete: spec, quantity, colours, date, delivery city.</li>
+      <li>Buyers are screened: business proof plus a paid sample fee.</li>
+      <li>Advance before production, balance before dispatch.</li>
+      <li>Rejection only against the signed spec. No last-minute design changes without a re-quote.</li>
+      <li>5% fee only on orders you actually get paid for. One simple agreement.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="pool">
+  <div class="pool">
+    <span class="tag">Coming soon</span>
+    <h2>The KnitBridge shade pool</h2>
+    <p class="sub" style="margin-bottom:0">Pick from our shared shade card on standard bases (180 GSM interlock, 240 GSM jersey, 320 GSM fleece). Brands that choose the same shade share one dye lot, so <b>20–30 kg orders</b> become possible. Each pool has a cut-off date and a refundable booking deposit, and runs only when it fills.</p>
+    <div class="swatches" aria-label="Sample pastel shades">
+      <div class="sw" style="background:#BAE5D6"></div><div class="sw" style="background:#FFB59C"></div><div class="sw" style="background:#AFA4CE"></div><div class="sw" style="background:#F5ECD2"></div><div class="sw" style="background:#F6C8D2"></div><div class="sw" style="background:#BCD4EC"></div><div class="sw" style="background:#F3E3A2"></div><div class="sw" style="background:#D9D9D6"></div>
+    </div>
+    <p style="margin:0;font-size:15px">Interested? Tick "shade pool" in the form below to get the first pool dates.</p>
+  </div>
+</section>
+
+<section id="quote">
+  <h2>Get started</h2>
+  <p class="sub">We reply within 24 hours on WhatsApp.</p>
+  <div class="tabs"><button type="button" class="on" data-show="buyer">I'm a brand / buyer</button><button type="button" data-show="mill">I run a mill / factory</button></div>
+
+  <form id="buyer" data-kind="rfq" autocomplete="on">
+    <div class="row">
+      <label>Your name<input name="name" required maxlength="80"></label>
+      <label>Brand / business name<input name="brand" required maxlength="100"></label>
+    </div>
+    <div class="row">
+      <label>WhatsApp number<input name="phone" type="tel" required maxlength="20" placeholder="+91 …"></label>
+      <label>Email <small>(optional)</small><input name="email" type="email" maxlength="120"></label>
+    </div>
+    <div class="row">
+      <label>What do you need?<select name="category" required>
+        <option value="">Choose…</option><option>Knit fabric (by kg)</option><option>Finished garments (by piece)</option><option>Printing / embroidery only</option><option>Not sure yet</option></select></label>
+      <label>Delivery city<input name="city" required maxlength="80"></label>
+    </div>
+    <label>Describe it <small>Product, fabric, GSM if known, colours, print, labels/packaging. Plain words are fine.</small>
+      <textarea name="details" required maxlength="3000" placeholder="e.g. 180-190 GSM cotton interlock, 4 baby prints on pastel base, 40-50 kg per print"></textarea></label>
+    <div class="row">
+      <label>Quantity<input name="quantity" required maxlength="120" placeholder="e.g. 200 kg, or 100 pcs per style"></label>
+      <label>Needed by<input name="needed_by" maxlength="60" placeholder="e.g. mid-December"></label>
+    </div>
+    <div class="row">
+      <label>Target price <small>(optional)</small><input name="target_price" maxlength="80" placeholder="e.g. ₹450/kg or ₹350/pc"></label>
+      <label>GST no. or store/Instagram link<input name="proof" maxlength="200" placeholder="Helps us prioritise serious orders"></label>
+    </div>
+    <label class="check"><input type="checkbox" name="sample_ok" value="yes"> I'm OK paying a small sample / lab-dip fee (adjusted against my order).</label>
+    <label class="check"><input type="checkbox" name="pool" value="yes"> Tell me about the shade pool (small orders from a shared shade card).</label>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="msg" role="status"></div>
+    <button class="btn" type="submit">Send my requirement</button>
+  </form>
+
+  <form id="mill" data-kind="mill" hidden>
+    <div class="row">
+      <label>Mill / company name<input name="company" required maxlength="120"></label>
+      <label>Contact person<input name="name" required maxlength="80"></label>
+    </div>
+    <div class="row">
+      <label>WhatsApp number<input name="phone" type="tel" required maxlength="20"></label>
+      <label>City<input name="city" required maxlength="80" placeholder="e.g. Tiruppur"></label>
+    </div>
+    <div class="row">
+      <label>GSTIN<input name="gst" maxlength="20"></label>
+      <label>Certifications <small>(optional)</small><input name="certs" maxlength="200" placeholder="GOTS, OEKO-TEX, SEDEX…"></label>
+    </div>
+    <label>What you make <small>Fabrics/garments, GSM range, print types</small><textarea name="details" required maxlength="3000"></textarea></label>
+    <div class="row">
+      <label>Minimum order<input name="moq" maxlength="120" placeholder="e.g. 50 kg per colour / 100 pcs"></label>
+      <label>Typical lead time<input name="lead_time" maxlength="80"></label>
+    </div>
+    <label class="check"><input type="checkbox" name="terms_ok" value="yes" required> I'm open to KnitBridge's 5% introduction fee, payable only on paid orders from buyers KnitBridge introduces.</label>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="msg" role="status"></div>
+    <button class="btn" type="submit">Join the network</button>
+  </form>
+</section>
+
+<section>
+  <h2>Questions</h2>
+  <details><summary>Who pays you?</summary><p>The mill pays us a 5% introduction fee on orders they get paid for. Quotes and sourcing are free for buyers.</p></details>
+  <details><summary>Do you hold my money?</summary><p>No. You pay the mill directly, against their GST invoice, in stages (advance after sample approval, balance after the pre-dispatch check).</p></details>
+  <details><summary>What's the minimum order?</summary><p>Usually 50 kg per colour for custom-dyed fabric and 50–100 pcs per style for garments. Our shade pool will bring fabric down to 20–30 kg on shared shades.</p></details>
+  <details><summary>What if bulk doesn't match the sample?</summary><p>Every order has a signed spec sheet with tolerances and your approved lab dip or strike-off. If bulk falls outside it, the mill fixes or replaces it, and we mediate within 48 hours.</p></details>
+  <details><summary>Can you ship outside India?</summary><p>Yes, for garment orders we can quote with export freight. Ask in the form.</p></details>
+</section>
+
+<footer>KnitBridge · Sourcing from Tiruppur, Tamil Nadu · Run by Shivam Pal · <a id="wa" href="https://wa.me/918692041285?text=Hi%20KnitBridge%2C%20I%20have%20a%20sourcing%20requirement">WhatsApp us</a></footer>
+</div>
+
+<script>
+const WA = 'https://wa.me/918692041285?text=';
+let API = '';
+fetch('config.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : {}).then(c => { API = c.api || ''; }).catch(() => {});
+
+function show(which) {
+  for (const b of document.querySelectorAll('.tabs button')) b.classList.toggle('on', b.dataset.show === which);
+  document.getElementById('buyer').hidden = which !== 'buyer';
+  document.getElementById('mill').hidden = which !== 'mill';
+}
+for (const b of document.querySelectorAll('.tabs button')) b.onclick = () => show(b.dataset.show);
+for (const a of document.querySelectorAll('[data-tab]')) a.addEventListener('click', () => show(a.dataset.tab));
+
+for (const form of document.querySelectorAll('form')) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const msg = form.querySelector('.msg'), btn = form.querySelector('button[type=submit]');
+    const data = Object.fromEntries(new FormData(form));
+    btn.disabled = true; msg.className = 'msg';
+    try {
+      const r = await fetch(API + '/api/' + form.dataset.kind, {method: 'POST', headers: {'content-type': 'application/json'}, body: JSON.stringify(data)});
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(j.error || 'failed');
+      msg.className = 'msg ok';
+      msg.textContent = form.dataset.kind === 'rfq'
+        ? 'Got it. We will WhatsApp you within 24 hours. Reference: ' + j.id
+        : 'Thanks for joining. We will WhatsApp you to verify and share the agreement. Reference: ' + j.id;
+      form.reset();
+    } catch (err) {
+      const summary = Object.entries(data).filter(([k, v]) => v && k !== 'website').map(([k, v]) => k + ': ' + v).join('\n');
+      msg.className = 'msg err';
+      msg.innerHTML = 'Could not send right now. <a href="' + WA + encodeURIComponent(summary.slice(0, 1500)) + '">Send it on WhatsApp instead</a>.';
+    } finally { btn.disabled = false; }
+  });
+}
+</script>
+</body>
+</html>

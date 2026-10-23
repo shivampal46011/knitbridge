@@ -262,12 +262,24 @@ header.top{background-image:var(--weave),var(--linen);background-size:6px 6px,24
 .next ol{margin:14px 0 0;padding-left:20px}.next li{margin:8px 0;color:var(--muted)}.next li b{color:var(--ink)}
 @media (max-width:920px){.split{grid-template-columns:1fr}.person{grid-template-columns:auto 1fr}.person .btn{grid-column:1/-1}.prob .q{min-height:0}}
 @media (max-width:560px){.us ul{columns:1}}
+
+.prom{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pcol{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;background-image:var(--weave),var(--linen);background-size:6px 6px,240px 240px;outline:1.5px dashed var(--stitch);outline-offset:-9px}
+.pcol h3{font-family:Fraunces,Georgia,serif;font-size:21px;margin:0 0 10px}
+.pcol ul{margin:0;padding:0;list-style:none}
+.pcol li{padding:9px 0;border-bottom:1px dashed var(--line);font-size:14.5px;color:var(--muted)}
+.pcol li:last-child{border-bottom:0}
+.pcol li b{color:var(--ink)}
+.money{margin-top:16px;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;background:var(--accent-soft);border-radius:18px;padding:22px 26px;outline:1.5px dashed color-mix(in srgb,var(--accent) 45%,transparent);outline-offset:-9px;font-size:15.5px}
+.money a{color:var(--accent);font-weight:600}
+.legal a{color:#fff;opacity:.85;margin-right:14px}
+@media (max-width:920px){.prom{grid-template-columns:1fr}.money{grid-template-columns:1fr;gap:6px}}
 </style>
 </head>
 <body>
 <header class="top" id="top"><div class="wrap navbar">
   <a class="logo" href="#"><span class="logo-mark"><svg width="18" height="16" viewBox="0 0 18 16" fill="none"><path d="M2 2 L9 13 L16 2" stroke="#fdfaf4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="serif">KnitBridge</span></a>
-  <nav class="links"><a href="#how">How it works</a><a href="#trust">Guarantees</a><a href="#source">What we source</a><a href="#pool">Shade pool</a></nav>
+  <nav class="links"><a href="#how">How it works</a><a href="#trust">Guarantees</a><a href="#promises">Our promises</a><a href="#source">What we source</a><a href="#pool">Shade pool</a></nav>
   <a class="btn sm" href="#quote">Get a quote</a>
 </div></header>
 
@@ -384,6 +396,42 @@ header.top{background-image:var(--weave),var(--linen);background-size:6px 6px,24
   </div>
 </section>
 
+<section id="promises">
+  <div class="head"><div class="eyebrow">Transparency</div><h2 class="serif">Our promises, in plain words</h2><p>What we pay for if we get it wrong, what we will never do, and who we actually are.</p></div>
+  <div class="prom">
+    <div class="pcol">
+      <h3>If we get it wrong, we pay</h3>
+      <ul>
+        <li><b>Our spec was wrong?</b> If a mistake in the spec <i>we</i> wrote means a re-sample, we pay for it.</li>
+        <li><b>Our quote missed a cost?</b> We cover the gap, up to our fee on that order.</li>
+        <li><b>The mill lets you down?</b> We move your order to another vetted mill, free, and the failing mill leaves our network.</li>
+      </ul>
+    </div>
+    <div class="pcol">
+      <h3>We will never</h3>
+      <ul>
+        <li>Hold your money. You always pay the mill directly, against its GST invoice.</li>
+        <li>Add our own markup to the mill's price.</li>
+        <li>Share your designs, prices or contact with anyone without your OK.</li>
+        <li>Charge buyers a fee. The sample fee goes to the mill, not to us.</li>
+      </ul>
+    </div>
+    <div class="pcol">
+      <h3>Who we are</h3>
+      <ul>
+        <li><b>We're new.</b> KnitBridge started in October 2026, run by Shivam Pal from Bengaluru.</li>
+        <li><b>Our mill network is small and growing.</b> We add a mill only after checking its GST, a factory video call and its certificates.</li>
+        <li><b>Business registration (Udyam/GST) is in progress.</b> Numbers will be listed here once issued.</li>
+        <li>We'd rather tell you this than show you made-up numbers.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="money">
+    <div class="serif" style="font-size:22px;font-weight:600">How we make money</div>
+    <div>The mill pays us <b>5% of the invoice value</b>, only on orders it actually gets paid for. Buyers pay us nothing. Mills quote their normal prices, and because you see <b>2–3 quotes side by side</b>, you always know the real market rate. Full details are in our <a href="terms.html">Terms</a>.</div>
+  </div>
+</section>
+
 <section id="source">
   <div class="head"><div class="eyebrow">What we source</div><h2 class="serif">Knit fabric, garments, and the finishing</h2><p>Tiruppur is India's knitwear capital. We work with mills across the chain.</p></div>
   <div class="cats">
@@ -452,6 +500,7 @@ header.top{background-image:var(--weave),var(--linen);background-size:6px 6px,24
         <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="msg" role="status"></div>
         <button class="btn" type="submit">Send my requirement</button>
+        <div style="font-size:12.5px;color:var(--muted);text-align:center">By sending, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy notice</a>. We share your spec with mills, never your contact, without your OK.</div>
       </form>
       <div class="next" id="next">
         <h3>Done. You can relax now.</h3>
@@ -486,6 +535,7 @@ header.top{background-image:var(--weave),var(--linen);background-size:6px 6px,24
         <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="msg" role="status"></div>
         <button class="btn" type="submit">Join the network</button>
+        <div style="font-size:12.5px;color:var(--muted);text-align:center">See our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy notice</a>.</div>
       </form>
     </div>
   </div>
@@ -504,7 +554,7 @@ header.top{background-image:var(--weave),var(--linen);background-size:6px 6px,24
 </main>
 
 <footer><div class="wrap f">
-  <div><a class="logo" href="#"><span class="logo-mark"><svg width="18" height="16" viewBox="0 0 18 16" fill="none"><path d="M2 2 L9 13 L16 2" stroke="#fdfaf4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="serif">KnitBridge</span></a><div style="margin-top:10px;opacity:.8">Sourcing from Tiruppur, Tamil Nadu · Run by Shivam Pal</div><div style="margin-top:14px"><a href="#quote">Get a quote</a> · <a href="https://wa.me/918692041285">WhatsApp</a></div></div>
+  <div><a class="logo" href="#"><span class="logo-mark"><svg width="18" height="16" viewBox="0 0 18 16" fill="none"><path d="M2 2 L9 13 L16 2" stroke="#fdfaf4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="serif">KnitBridge</span></a><div style="margin-top:10px;opacity:.8">Sourcing from Tiruppur, Tamil Nadu · Run by Shivam Pal</div><div style="margin-top:14px"><a href="#quote">Get a quote</a> · <a href="https://wa.me/918692041285">WhatsApp</a></div><div class="legal" style="margin-top:10px;font-size:13px"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="#promises">Our promises</a></div></div>
   <div class="care" aria-label="Care label"><b>Care instructions</b><div class="sym" aria-hidden="true">◌ ⊘ ▢ ◇ ⊡</div>100% transparency · Signed spec, no shrinkage in trust · Pay the mill directly · Handle with honesty<br><b style="display:block;margin-top:8px">Made in Tiruppur, India</b></div>
 </div></footer>
 

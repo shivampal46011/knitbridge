@@ -274,12 +274,48 @@ header.top{background-image:var(--weave),var(--linen);background-size:6px 6px,24
 .money a{color:var(--accent);font-weight:600}
 .legal a{color:#fff;opacity:.85;margin-right:14px}
 @media (max-width:920px){.prom{grid-template-columns:1fr}.money{grid-template-columns:1fr;gap:6px}}
+
+/* quick answers */
+.qa-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.qa-tabs button{border:1px solid var(--line);background:var(--card);font:inherit;font-size:14.5px;font-weight:600;padding:9px 15px;border-radius:999px;color:var(--muted);cursor:pointer}
+.qa-tabs button.on{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.qa-panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;background-image:var(--weave),var(--linen);background-size:6px 6px,240px 240px;outline:1.5px dashed var(--stitch);outline-offset:-9px}
+.est{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.est-form{display:grid;gap:14px}
+.est-note{font-size:13.5px;color:var(--accent);font-weight:600;min-height:20px}
+.est-out{background:var(--bg2);border-radius:16px;padding:22px}
+.est-k{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.est-big{font-size:36px;font-weight:600;line-height:1.1;margin-top:4px;color:var(--brand)}
+.est-mid{font-size:26px;font-weight:600;margin-top:4px}
+.est-small{font-size:13px;color:var(--muted);margin-top:10px}
+.fine{font-size:13px;color:var(--muted);margin:16px 0 0}
+.qt{width:100%;border-collapse:collapse;font-size:15px}
+.qt th{text-align:left;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 10px;border-bottom:1.5px solid var(--line)}
+.qt td{padding:11px 10px;border-bottom:1px dashed var(--line);vertical-align:top}
+.soon{font-size:11px;font-weight:700;background:var(--accent);color:#fff;padding:2px 7px;border-radius:999px;margin-left:4px}
+.gsm{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.gsm div{background:var(--bg2);border-radius:14px;padding:16px 14px;border-top:calc(4px + var(--i,0)*2px) solid var(--brand)}
+.gsm div:nth-child(1){--i:0}.gsm div:nth-child(2){--i:1}.gsm div:nth-child(3){--i:2}.gsm div:nth-child(4){--i:3}.gsm div:nth-child(5){--i:4}
+.gsm b{display:block;font-family:Fraunces,Georgia,serif;font-size:22px}
+.gsm span{font-size:14px;color:var(--muted)}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mini{background:var(--bg2);border-radius:14px;padding:18px}
+.mini h3{margin:0 0 8px;font-family:Fraunces,Georgia,serif;font-size:19px}
+.mini p{margin:6px 0 0;font-size:14.5px;color:var(--muted)}
+.mini b{color:var(--ink)}
+.send{display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center}
+.send ul{margin:0;padding:0;list-style:none;columns:1}
+.send li{padding:8px 0 8px 28px;position:relative;border-bottom:1px dashed var(--line);font-size:15px;color:var(--muted)}
+.send li:before{content:"✓";position:absolute;left:4px;color:var(--brand);font-weight:700}
+.send li b{color:var(--ink)}
+.sendcta{background:var(--bg2);border-radius:16px;padding:22px}
+@media (max-width:920px){.est,.send{grid-template-columns:1fr}.gsm{grid-template-columns:1fr 1fr}.cards3{grid-template-columns:1fr}.qt{font-size:14px}}
 </style>
 </head>
 <body>
 <header class="top" id="top"><div class="wrap navbar">
   <a class="logo" href="#"><span class="logo-mark"><svg width="18" height="16" viewBox="0 0 18 16" fill="none"><path d="M2 2 L9 13 L16 2" stroke="#fdfaf4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="serif">KnitBridge</span></a>
-  <nav class="links"><a href="#how">How it works</a><a href="#trust">Guarantees</a><a href="#promises">Our promises</a><a href="#source">What we source</a><a href="#pool">Shade pool</a></nav>
+  <nav class="links"><a href="#how">How it works</a><a href="#trust">Guarantees</a><a href="#promises">Our promises</a><a href="#answers">Prices &amp; FAQs</a><a href="#source">What we source</a><a href="#pool">Shade pool</a></nav>
   <a class="btn sm" href="#quote">Get a quote</a>
 </div></header>
 
@@ -441,6 +477,107 @@ header.top{background-image:var(--weave),var(--linen);background-size:6px 6px,24
   </div>
 </section>
 
+<section id="answers">
+  <div class="head"><div class="eyebrow">Quick answers</div><h2 class="serif">The things everyone asks first</h2><p>Real numbers from Tiruppur mills, so you can plan before you even message us.</p></div>
+
+  <div class="qa-tabs" role="tablist">
+    <button class="on" data-qa="estimate">💰 Price estimate</button><button data-qa="moq">📦 Minimums</button><button data-qa="time">⏱ Timelines</button><button data-qa="gsm">🧵 Which GSM?</button><button data-qa="print">🎨 Print methods</button><button data-qa="fabric">🧶 Fabric types</button><button data-qa="send">✅ What to send us</button>
+  </div>
+
+  <div class="qa-panel" id="qa-estimate">
+    <div class="est">
+      <div class="est-form">
+        <label>What do you need?
+          <select id="est-item"></select></label>
+        <label>Quantity <small id="est-unit"></small>
+          <input id="est-qty" type="number" min="1" inputmode="numeric"></label>
+        <div class="est-note" id="est-moq"></div>
+      </div>
+      <div class="est-out">
+        <div class="est-k">Estimated mill price</div>
+        <div class="est-big serif" id="est-per"></div>
+        <div class="est-k" style="margin-top:14px">Estimated order value (before GST &amp; freight)</div>
+        <div class="est-mid serif" id="est-total"></div>
+        <div class="est-small">GST extra (usually 5% on fabric and most garments). Freight quoted for your city. You pay the mill directly; we add nothing on top.</div>
+        <a class="btn" href="#quote" style="margin-top:14px">Get exact quotes in 48 h</a>
+      </div>
+    </div>
+    <p class="fine">Ranges are based on public price listings from Tiruppur and other Indian mills, October 2026, at the minimum quantity, excluding GST. Final prices depend on GSM, colours, print and quantity. This is a guide, not a quote.</p>
+  </div>
+
+  <div class="qa-panel" id="qa-moq" hidden>
+    <table class="qt">
+      <tr><th>What</th><th>Typical minimum</th><th>Notes</th></tr>
+      <tr><td>Custom-dyed knit fabric</td><td><b>50 kg per colour</b></td><td>Mills dye in lots; smaller lots cost more per kg</td></tr>
+      <tr><td>Printed knit fabric</td><td><b>40–50 kg per design</b></td><td>Digital print suits small lots; rotary needs screens</td></tr>
+      <tr><td>Custom garments (tees, hoodies)</td><td><b>50–100 pcs per style/colour</b></td><td>Some units start at 50 pcs; more sizes/colours can raise it</td></tr>
+      <tr><td>Varsity / jackets</td><td><b>30–60 pcs</b></td><td>Depends on the build (fleece, leather sleeves, embroidery)</td></tr>
+      <tr><td>Shade pool <span class="soon">coming soon</span></td><td><b>20–30 kg per shade</b></td><td>Share a dye lot with other brands on our shade card</td></tr>
+    </table>
+  </div>
+
+  <div class="qa-panel" id="qa-time" hidden>
+    <table class="qt">
+      <tr><th>Step</th><th>Typical time</th></tr>
+      <tr><td>Your enquiry → indicative price</td><td><b>within 24 hours</b></td></tr>
+      <tr><td>Firm quotes from 2–3 mills</td><td><b>within 48 hours</b></td></tr>
+      <tr><td>Lab dip / strike-off / sample</td><td><b>7–10 days</b></td></tr>
+      <tr><td>Bulk fabric after approval</td><td><b>2–3 weeks</b></td></tr>
+      <tr><td>Bulk garments after approval</td><td><b>3–4 weeks</b></td></tr>
+      <tr><td>Road transport within India</td><td><b>3–7 days</b> depending on city</td></tr>
+    </table>
+    <p class="fine">Typical ranges. Your exact dates go on your spec sheet, with a late-delivery clause.</p>
+  </div>
+
+  <div class="qa-panel" id="qa-gsm" hidden>
+    <div class="gsm">
+      <div><b>140–160</b><span>Light tees, summer wear, linings</span></div>
+      <div><b>170–200</b><span>Everyday tees, baby wear, interlock basics</span></div>
+      <div><b>220–260</b><span>Heavyweight &amp; oversized tees, premium feel</span></div>
+      <div><b>260–300</b><span>Sweatshirts, light hoodies, joggers</span></div>
+      <div><b>320–350</b><span>Premium hoodies, winter fleece</span></div>
+    </div>
+    <p class="fine">GSM = grams per square metre. Higher GSM is thicker and warmer, and costs more per piece (but per kg the price is similar). Not sure? Send a photo of a garment you like and we'll match it.</p>
+  </div>
+
+  <div class="qa-panel" id="qa-print" hidden>
+    <div class="cards3">
+      <div class="mini"><h3>Digital print</h3><p><b>Best for:</b> small lots, many colours, photo-like designs.</p><p><b>Cost:</b> no screen charges; higher per kg.</p></div>
+      <div class="mini"><h3>Rotary screen</h3><p><b>Best for:</b> bigger runs of the same design.</p><p><b>Cost:</b> one-time screen per colour; cheapest per kg at volume. Screens kept for repeats.</p></div>
+      <div class="mini"><h3>Screen / DTF on garments</h3><p><b>Best for:</b> logos and 1–4 colour artwork on finished tees and hoodies.</p><p><b>Cost:</b> usually included in the per-piece price.</p></div>
+    </div>
+    <p class="fine">For 40–50 kg per design, digital often works out cheaper than rotary once screen charges are counted. We quote both so you can compare.</p>
+  </div>
+
+  <div class="qa-panel" id="qa-fabric" hidden>
+    <table class="qt">
+      <tr><th>Fabric</th><th>Feels like</th><th>Used for</th></tr>
+      <tr><td><b>Single jersey</b></td><td>Light, smooth face, curls at edges</td><td>T-shirts, tops</td></tr>
+      <tr><td><b>Interlock</b></td><td>Soft, thick, smooth on both sides, no curl</td><td>Baby wear, premium tees, polos</td></tr>
+      <tr><td><b>Rib</b></td><td>Stretchy with vertical lines</td><td>Collars, cuffs, fitted tops</td></tr>
+      <tr><td><b>Fleece</b></td><td>Brushed, fluffy inside, warm</td><td>Hoodies, sweatshirts</td></tr>
+      <tr><td><b>Loopknit / French terry</b></td><td>Loops inside, not brushed</td><td>Joggers, light sweatshirts</td></tr>
+    </table>
+    <p class="fine">Combed, organic (GOTS) and OEKO-TEX certified options are available from certified mills on request.</p>
+  </div>
+
+  <div class="qa-panel" id="qa-send" hidden>
+    <div class="send">
+      <ul>
+        <li><b>Product</b>: fabric by kg, or garments by piece</li>
+        <li><b>Fabric &amp; GSM</b>: or just a photo of something you like</li>
+        <li><b>Colours</b>: Pantone codes, or photos (we'll convert them)</li>
+        <li><b>Prints / logos</b>: artwork files or reference images</li>
+        <li><b>Quantity</b>: per colour / design / size</li>
+        <li><b>Labels &amp; packing</b>: if you need them</li>
+        <li><b>Delivery city</b> and <b>date</b> you need it by</li>
+        <li><b>Target price</b>: optional, helps us negotiate</li>
+      </ul>
+      <div class="sendcta"><div class="serif" style="font-size:22px;font-weight:600;margin-bottom:6px">Don't have all of this?</div><p style="margin:0 0 14px;color:var(--muted)">That's fine. Send what you have. Working it out with you is our job.</p><a class="btn" href="#quote">Send my requirement</a></div>
+    </div>
+  </div>
+</section>
+
 <section id="pool">
   <div class="pool">
     <div>
@@ -587,6 +724,35 @@ for (const b of document.querySelectorAll('.toggle button')) b.onclick = () => {
   for (const x of document.querySelectorAll('.toggle button')) x.classList.toggle('on', x === b);
   document.getElementById('g-buyers').hidden = b.dataset.g !== 'buyers';
   document.getElementById('g-mills').hidden = b.dataset.g !== 'mills';
+};
+
+// Price estimator: ranges from public mill listings (Oct 2026), ex-GST, at MOQ.
+const ITEMS = [
+  {n: 'Plain dyed cotton interlock (180–190 GSM)', u: 'kg', lo: 430, hi: 560, moq: 50, moqTxt: 'Minimum ~50 kg per colour'},
+  {n: 'Printed cotton interlock (180–190 GSM)', u: 'kg', lo: 650, hi: 900, moq: 40, moqTxt: 'Minimum ~40–50 kg per design'},
+  {n: 'Custom printed T-shirt (180 GSM)', u: 'pc', lo: 150, hi: 250, moq: 100, moqTxt: 'Minimum ~100 pcs per style'},
+  {n: 'Oversized T-shirt (220–240 GSM)', u: 'pc', lo: 295, hi: 350, moq: 100, moqTxt: 'Minimum ~100 pcs per colour'},
+  {n: 'Hoodie, printed (≈300 GSM)', u: 'pc', lo: 350, hi: 450, moq: 100, moqTxt: 'Minimum ~100 pcs'},
+  {n: 'Premium hoodie (320–330 GSM cotton fleece)', u: 'pc', lo: 590, hi: 650, moq: 50, moqTxt: 'Minimum ~50 pcs'},
+  {n: 'Varsity jacket', u: 'pc', lo: 350, hi: 800, moq: 30, moqTxt: 'Minimum ~30–60 pcs'},
+];
+const inr = (n) => '₹' + Math.round(n).toLocaleString('en-IN');
+const sel = document.getElementById('est-item'), qty = document.getElementById('est-qty');
+ITEMS.forEach((it, i) => sel.add(new Option(it.n, i)));
+function estimate(resetQty) {
+  const it = ITEMS[sel.value];
+  if (resetQty) qty.value = it.u === 'kg' ? 100 : it.moq;
+  const q = Math.max(1, Number(qty.value) || 0);
+  document.getElementById('est-unit').textContent = it.u === 'kg' ? '(kg)' : '(pieces)';
+  document.getElementById('est-per').textContent = `${inr(it.lo)}–${inr(it.hi)} / ${it.u}`;
+  document.getElementById('est-total').textContent = `${inr(it.lo * q)} – ${inr(it.hi * q)}`;
+  document.getElementById('est-moq').textContent = q < it.moq ? `${it.moqTxt}. Below that, ask us about the shade pool or small-lot mills.` : it.moqTxt;
+}
+sel.onchange = () => estimate(true); qty.oninput = () => estimate(false); estimate(true);
+
+for (const b of document.querySelectorAll('.qa-tabs button')) b.onclick = () => {
+  for (const x of document.querySelectorAll('.qa-tabs button')) x.classList.toggle('on', x === b);
+  for (const p of document.querySelectorAll('.qa-panel')) p.hidden = p.id !== 'qa-' + b.dataset.qa;
 };
 
 for (const form of document.querySelectorAll('form')) {

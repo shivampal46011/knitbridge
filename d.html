@@ -1,0 +1,8 @@
+<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex"><title>KnitBridge</title>
+<p style="font:15px system-ui;margin:40px;color:#5f6a64">Opening…</p>
+<script>
+// Stable link to the deal book on the Mac: d.html#<key>. The key stays in the hash, so it never reaches this host.
+fetch('config.json', { cache: 'no-store' }).then((r) => r.json()).then((c) => {
+  location.replace(c.api + '/dash?k=' + encodeURIComponent(location.hash.slice(1)))
+}).catch(() => { document.querySelector('p').textContent = 'The Mac is offline right now.' })
+</script>

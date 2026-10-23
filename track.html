@@ -55,9 +55,9 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'
       <div class="calm">${esc(o.calm || 'Everything is on track. We are watching it for you, so there is nothing you need to do.')}</div>
       <ul class="stages">${o.stages.map((s, i) => `<li class="${s.done ? 'done' : i === firstOpen ? 'now' : ''}"><span class="dot">${s.done ? '✓' : ''}</span><b>${esc(s.name)}</b><small>${esc(s.date || (i === firstOpen ? 'in progress' : ''))}</small></li>`).join('')}</ul>
       ${o.updates && o.updates.length ? `<div style="margin-top:24px"><h2>Updates</h2><ul class="upd">${o.updates.slice().reverse().map(u => `<li><small>${esc(u.date)}</small>${esc(u.text)}</li>`).join('')}</ul></div>` : ''}
-      <a class="wa" href="https://wa.me/918692041285?text=${encodeURIComponent('Hi Shivam, about order ' + (q.get('o') || ''))}">Questions? WhatsApp Shivam →</a>`;
+      <div style="margin-top:14px;color:var(--muted);font-size:14.5px">Questions? Reply to your KnitBridge contact, or use the <a href="./#quote">contact form</a>.</div>`;
   } catch {
-    out.innerHTML = '<div class="err">We could not load this order right now. Please check the link, or <a href="https://wa.me/918692041285">WhatsApp Shivam</a>.</div>';
+    out.innerHTML = '<div class="err">We could not load this order right now. Please check the link, or use the <a href="./#quote">contact form</a>.</div>';
   }
 })();
 </script>

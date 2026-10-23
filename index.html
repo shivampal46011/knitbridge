@@ -5,214 +5,414 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KnitBridge · Vetted Tiruppur Mills</title>
 <meta name="description" content="Custom knit fabric and apparel from vetted Tiruppur mills, for small and growing brands. Low MOQ, signed spec sheets, pay the mill directly.">
+<meta property="og:title" content="KnitBridge · Vetted Tiruppur mills for small brands">
+<meta property="og:description" content="Plain-words requirement in, mill-ready spec and 2–3 quotes in 48 hours out. Pay the mill directly.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fbfaf7;--card:#fff;--ink:#1d1b18;--muted:#6b665e;--line:#e7e2d9;--brand:#1f6f5c;--brand-ink:#fff;--accent:#f3efe6;--ok:#1f6f5c;--err:#b3261e}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141412;--card:#1c1c19;--ink:#efece6;--muted:#a39e94;--line:#2e2d29;--brand:#4fb399;--brand-ink:#0d1f1a;--accent:#22221e;--ok:#4fb399;--err:#f2867d}}
+:root{
+  --bg:#f7f3ec;--bg2:#efe8dc;--card:#fffdf9;--ink:#1c2622;--muted:#5f6a64;--line:#e2d9ca;
+  --brand:#1f5c4c;--brand2:#2c7a65;--brand-ink:#fdfaf4;--accent:#c8643b;--accent-soft:#f6e3d8;
+  --ok:#1f5c4c;--err:#a8321f;--shadow:0 1px 2px rgba(28,38,34,.06),0 12px 32px -12px rgba(28,38,34,.18);
+  --knit:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='12' viewBox='0 0 14 12'%3E%3Cpath d='M1 1 L7 10 M13 1 L7 10' stroke='%23000' stroke-opacity='.07' stroke-width='2.2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+:root{color-scheme:light}
+[hidden]{display:none!important}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--brand)}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.logo{font-weight:800;font-size:20px;letter-spacing:-.3px}
-.logo span{color:var(--brand)}
-nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-size:15px}
-.hero{padding:48px 0 36px}
-.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.1;letter-spacing:-1px;margin:0 0 16px;max-width:760px}
-.hero p{font-size:18px;color:var(--muted);max-width:640px;margin:0 0 26px}
-.btn{display:inline-block;padding:13px 22px;border-radius:10px;background:var(--brand);color:var(--brand-ink);text-decoration:none;font-weight:600;border:0;font-size:16px;cursor:pointer}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:8px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-.chip{background:var(--accent);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--muted)}
-section{padding:40px 0;border-top:1px solid var(--line)}
-h2{font-size:28px;letter-spacing:-.5px;margin:0 0 8px}
-.sub{color:var(--muted);margin:0 0 26px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-.card h3{margin:0 0 6px;font-size:17px}
-.card p{margin:0;color:var(--muted);font-size:15px}
-.steps{counter-reset:s;display:grid;gap:12px}
-.step{display:flex;gap:14px;align-items:flex-start}
-.step:before{counter-increment:s;content:counter(s);flex:0 0 32px;height:32px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:700}
-.step b{display:block}
-.step span{color:var(--muted);font-size:15px}
-.two{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.two ul{margin:10px 0 0;padding-left:18px}
-.two li{margin:8px 0;font-size:15px}
-.tag{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--brand);margin-bottom:4px}
-.pool{background:var(--accent);border:1px solid var(--line);border-radius:14px;padding:22px}
-.swatches{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-.sw{width:38px;height:38px;border-radius:8px;border:1px solid rgba(0,0,0,.08)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.serif{font-family:Fraunces,Georgia,serif;letter-spacing:-.02em}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+
+/* nav */
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent}
+header.top.scrolled{border-bottom-color:var(--line)}
+.navbar{display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;text-decoration:none;color:var(--ink)}
+.logo-mark{width:30px;height:30px;border-radius:8px;background:var(--brand);display:grid;place-items:center}
+nav.links a{margin-left:26px;text-decoration:none;color:var(--muted);font-size:15px;font-weight:500}
+nav.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;background:var(--brand);color:var(--brand-ink);text-decoration:none;font-weight:600;border:0;font-size:15.5px;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{background:var(--brand2);transform:translateY(-1px)}
+.btn.sm{padding:9px 16px;font-size:14px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--ink);background:transparent}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:64px 0 72px}
+.hero h1{font-size:clamp(36px,5.2vw,60px);line-height:1.04;margin:14px 0 20px;font-weight:600}
+.hero h1 em{font-style:italic;color:var(--brand)}
+.hero p.lead{font-size:18.5px;color:var(--muted);max-width:540px;margin:0 0 30px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.assure{display:flex;flex-wrap:wrap;gap:18px;margin-top:30px;color:var(--muted);font-size:14px}
+.assure span{display:flex;align-items:center;gap:7px}
+.assure svg{color:var(--brand);flex:none}
+
+/* spec sheet mock */
+.sheet-wrap{position:relative;isolation:isolate;padding:10px}
+.sheet-wrap:before{content:"";position:absolute;top:-14px;right:-14px;width:160px;height:160px;border-radius:28px;background:#f3d6c6 var(--knit);z-index:-1;transform:rotate(-8deg)}
+.sheet-wrap:after{content:"";position:absolute;bottom:-18px;left:-18px;width:130px;height:130px;border-radius:50%;background:#bfe0d3 var(--knit);z-index:-1}
+.sheet{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:22px;transform:rotate(1.2deg)}
+.sheet-head{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px dashed var(--line);padding-bottom:14px;margin-bottom:14px}
+.sheet-head b{font-size:15px}
+.sheet-head small{display:block;color:var(--muted);font-size:12.5px}
+.pill{font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);white-space:nowrap}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:13.5px;margin-bottom:14px}
+.spec dt{color:var(--muted)}
+.spec dd{margin:0;font-weight:500}
+.shades{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+.shade{border-radius:10px;overflow:hidden;border:1px solid var(--line);font-size:10.5px;line-height:1.25;background:var(--card)}
+.shade i{display:block;height:42px;background-image:var(--knit)}
+.shade span{display:block;padding:5px 7px;color:var(--muted)}
+.shade b{display:block;color:var(--ink);font-size:11px}
+.price{background:var(--bg2);border-radius:12px;padding:12px 14px;font-size:13.5px}
+.price div{display:flex;justify-content:space-between;padding:3px 0}
+.price .tot{border-top:1px solid var(--line);margin-top:6px;padding-top:8px;font-weight:700}
+.sheet-foot{display:flex;gap:6px;margin-top:14px;flex-wrap:wrap}
+.tick{font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);display:flex;align-items:center;gap:5px}
+.tick.done{color:var(--brand);border-color:color-mix(in srgb,var(--brand) 35%,transparent)}
+.caption{font-size:12.5px;color:var(--muted);text-align:center;margin-top:16px}
+
+/* promise strip */
+.strip{background:var(--brand);color:var(--brand-ink);border-radius:20px;padding:26px 30px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;background-image:var(--knit)}
+.strip b{display:block;font-family:Fraunces,Georgia,serif;font-size:30px;font-weight:600;line-height:1.1}
+.strip span{font-size:14px;opacity:.85}
+
+section{padding:88px 0 0}
+.head{max-width:640px;margin-bottom:40px}
+.head h2{font-size:clamp(30px,3.6vw,42px);line-height:1.1;margin:10px 0 12px;font-weight:600}
+.head p{color:var(--muted);margin:0;font-size:17px}
+
+/* problems */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.prob{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.prob .ic{width:42px;height:42px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:14px}
+.prob h3{margin:0 0 6px;font-size:17px}
+.prob p{margin:0;color:var(--muted);font-size:14.5px}
+.prob .fix{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:13.5px;color:var(--brand);font-weight:600}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative}
+.steps:before{content:"";position:absolute;top:23px;left:8%;right:8%;height:2px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 14px)}
+.st{position:relative;text-align:left}
+.st .n{width:48px;height:48px;border-radius:50%;background:var(--card);border:2px solid var(--brand);color:var(--brand);display:grid;place-items:center;font-weight:700;font-family:Fraunces,Georgia,serif;font-size:19px;margin-bottom:14px;position:relative}
+.st h3{font-size:16px;margin:0 0 6px}
+.st p{margin:0;color:var(--muted);font-size:14px}
+.st .t{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--accent)}
+
+/* guarantees */
+.toggle{display:inline-flex;background:var(--bg2);border-radius:999px;padding:5px;margin-bottom:22px}
+.toggle button{border:0;background:transparent;font:inherit;font-weight:600;font-size:15px;padding:10px 20px;border-radius:999px;color:var(--muted);cursor:pointer}
+.toggle button.on{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+.guar{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.g{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.g .ck{flex:none;width:30px;height:30px;border-radius:50%;background:color-mix(in srgb,var(--brand) 14%,transparent);color:var(--brand);display:grid;place-items:center}
+.g h3{margin:0 0 4px;font-size:16px}
+.g p{margin:0;color:var(--muted);font-size:14.5px}
+
+/* what we source */
+.cats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cat{border-radius:18px;overflow:hidden;background:var(--card);border:1px solid var(--line)}
+.cat .tex{height:130px;background-image:var(--knit);position:relative}
+.cat .tex span{position:absolute;left:16px;bottom:12px;font-size:12px;font-weight:700;background:var(--card);padding:4px 10px;border-radius:999px}
+.cat .body{padding:18px 20px 20px}
+.cat h3{margin:0 0 6px;font-size:18px}
+.cat p{margin:0;color:var(--muted);font-size:14.5px}
+
+/* pool */
+.pool{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:40px}
+.pool .card-shades{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;background:var(--bg2);border-radius:16px;padding:16px}
+.pool .card-shades div{border-radius:10px;overflow:hidden;background:var(--card);font-size:11px;border:1px solid var(--line)}
+.pool .card-shades i{display:block;aspect-ratio:1.3;background-image:var(--knit)}
+.pool .card-shades span{display:block;padding:5px 8px;color:var(--muted)}
+.pool ul{padding:0;margin:18px 0 0;list-style:none}
+.pool li{display:flex;gap:10px;margin:10px 0;font-size:15px}
+.pool li b{color:var(--accent);font-family:Fraunces,Georgia,serif}
+.badge{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;background:var(--accent);color:#fff;margin-bottom:10px}
+
+/* form */
+.formwrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
+.formside .head{margin-bottom:22px}
+.contact{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-top:20px;font-size:14.5px}
+.contact a.wa{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;margin-top:6px}
+.formcard{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:28px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:var(--bg2);border-radius:14px;padding:5px;margin-bottom:22px}
+.tabs button{border:0;background:transparent;font:inherit;font-weight:600;font-size:15px;padding:11px;border-radius:10px;color:var(--muted);cursor:pointer}
+.tabs button.on{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
 form{display:grid;gap:14px}
-.row{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-label{font-size:14px;font-weight:600;display:grid;gap:6px}
+.row{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+label{font-size:13.5px;font-weight:600;display:grid;gap:6px}
 label small{font-weight:400;color:var(--muted)}
-input,select,textarea{font:inherit;padding:11px 12px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--ink);width:100%}
-textarea{min-height:96px;resize:vertical}
-.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px}
-.check input{width:auto;margin-top:3px}
+input,select,textarea{font:inherit;font-size:15px;padding:12px 13px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%;transition:border-color .15s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand)}
+textarea{min-height:104px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:var(--muted);grid-template-columns:none}
+.check input{width:18px;height:18px;margin-top:2px;accent-color:var(--brand);flex:none}
 .hp{position:absolute;left:-9999px}
-.msg{padding:12px 14px;border-radius:9px;font-size:15px;display:none}
-.msg.ok{display:block;background:var(--accent);border:1px solid var(--ok);color:var(--ok)}
-.msg.err{display:block;background:var(--accent);border:1px solid var(--err);color:var(--err)}
-.tabs{display:flex;gap:8px;margin-bottom:18px}
-.tabs button{flex:1;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
-.tabs button.on{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
-details{border-bottom:1px solid var(--line);padding:14px 0}
-summary{cursor:pointer;font-weight:600}
-details p{color:var(--muted);margin:8px 0 0}
-footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
-@media (max-width:560px){nav{display:none}.btn.ghost{margin:10px 0 0}}
+.msg{padding:12px 14px;border-radius:10px;font-size:14.5px;display:none}
+.msg.ok{display:block;background:color-mix(in srgb,var(--ok) 12%,transparent);color:var(--ok)}
+.msg.err{display:block;background:color-mix(in srgb,var(--err) 10%,transparent);color:var(--err)}
+form .btn{justify-content:center;width:100%;padding:15px}
+
+/* faq */
+.faq{max-width:780px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:600;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:22px;line-height:1;color:var(--muted);transition:transform .2s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{color:var(--muted);margin:10px 0 0}
+
+footer{margin-top:96px;background:var(--ink);color:#d9d4ca;padding:44px 0;background-image:var(--knit)}
+footer .f{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px}
+footer a{color:#fff}
+footer .logo{color:#fff}
+
+@media (max-width:920px){
+  .hero{grid-template-columns:1fr;gap:48px;padding-top:40px}
+  .sheet{transform:none;max-width:520px}
+  .grid4{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr;gap:22px}
+  .steps:before{top:8px;bottom:8px;left:23px;right:auto;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--line) 0 8px,transparent 8px 14px)}
+  .st{display:grid;grid-template-columns:48px 1fr;gap:0 16px}
+  .st .n{grid-row:span 3;margin:0}
+  .strip{grid-template-columns:1fr 1fr}
+  .cats{grid-template-columns:1fr}
+  .pool,.formwrap{grid-template-columns:1fr;padding:28px}
+  .formwrap{padding:0}
+  nav.links{display:none}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .grid4,.guar{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  .shades{grid-template-columns:repeat(2,1fr)}
+  .formcard{padding:20px}
+  .pool{padding:22px}
+  .strip{padding:22px}
+  section{padding-top:68px}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="top">
-  <div class="logo">Knit<span>Bridge</span></div>
-  <nav><a href="#how">How it works</a><a href="#trust">Guarantees</a><a href="#pool">Shade pool</a><a href="#quote">Get a quote</a></nav>
-</header>
+<header class="top" id="top"><div class="wrap navbar">
+  <a class="logo" href="#"><span class="logo-mark"><svg width="18" height="16" viewBox="0 0 18 16" fill="none"><path d="M2 2 L9 13 L16 2" stroke="#fdfaf4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="serif">KnitBridge</span></a>
+  <nav class="links"><a href="#how">How it works</a><a href="#trust">Guarantees</a><a href="#source">What we source</a><a href="#pool">Shade pool</a></nav>
+  <a class="btn sm" href="#quote">Get a quote</a>
+</div></header>
 
+<main class="wrap">
 <div class="hero">
-  <h1>Custom fabric &amp; apparel from vetted Tiruppur mills, even for small brands.</h1>
-  <p>Tell us what you need in plain words. We turn it into a mill-ready spec, get you 2–3 quotes in 48 hours, and stay with your order until it reaches your door. You pay the mill directly. The mill pays our fee.</p>
-  <a class="btn" href="#quote">Get a free quote</a><a class="btn ghost" href="#quote" data-tab="mill">I run a mill</a>
-  <div class="chips">
-    <span class="chip">Interlock · jersey · fleece · rib</span><span class="chip">Tees · hoodies · polos · baby wear</span><span class="chip">Rotary &amp; digital print</span><span class="chip">Custom labels &amp; packaging</span><span class="chip">MOQ from 50 pcs / 50 kg</span>
+  <div>
+    <div class="eyebrow">Tiruppur knit sourcing · for small brands</div>
+    <h1 class="serif">Your fabric, made right, by mills that <em>actually reply.</em></h1>
+    <p class="lead">Tell us what you need in plain words. We turn it into a mill-ready spec, bring you 2–3 quotes from vetted Tiruppur mills in 48 hours, and stay on your order until it's delivered.</p>
+    <div class="ctas"><a class="btn" href="#quote">Get a free quote <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn ghost" href="#quote" data-tab="mill">I run a mill</a></div>
+    <div class="assure">
+      <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free for buyers</span>
+      <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pay the mill directly</span>
+      <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Signed spec sheet</span>
+    </div>
+  </div>
+
+  <div>
+    <div class="sheet-wrap"><div class="sheet" aria-label="Sample spec sheet">
+      <div class="sheet-head"><div><b>Spec sheet &amp; landed quote</b><small>Sample · baby-wear fabric order</small></div><span class="pill">Quoted in 48h</span></div>
+      <dl class="spec">
+        <dt>Fabric</dt><dd>100% combed cotton interlock</dd>
+        <dt>GSM</dt><dd>185 ± 5%</dd>
+        <dt>Print</dt><dd>Rotary, 4 designs, baby-safe dyes</dd>
+        <dt>Quantity</dt><dd>4 × 50 kg · Delivery: Rajasthan</dd>
+      </dl>
+      <div class="shades">
+        <div class="shade"><i style="background-color:#BAE5D6"></i><span><b>Mint</b>12-5507 TCX</span></div>
+        <div class="shade"><i style="background-color:#FFB59C"></i><span><b>Peach</b>14-1228 TCX</span></div>
+        <div class="shade"><i style="background-color:#AFA4CE"></i><span><b>Lavender</b>15-3817 TCX</span></div>
+        <div class="shade"><i style="background-color:#F5ECD2"></i><span><b>Cream</b>11-0507 TCX</span></div>
+      </div>
+      <div class="price">
+        <div><span>Fabric + print (per kg)</span><span>₹ ···</span></div>
+        <div><span>Screens / setup</span><span>₹ ···</span></div>
+        <div><span>Freight to your city</span><span>₹ ···</span></div>
+        <div class="tot"><span>Landed price, GST shown separately</span><span>One fixed number</span></div>
+      </div>
+      <div class="sheet-foot">
+        <span class="tick done">✓ Lab dip approved</span><span class="tick done">✓ Advance to mill</span><span class="tick">Pre-dispatch QC</span><span class="tick">Dispatch</span>
+      </div>
+    </div></div>
+    <div class="caption">What every order comes with: one clear spec, one landed price, tracked to delivery.</div>
   </div>
 </div>
 
+<div class="strip">
+  <div><b>24 h</b><span>indicative price</span></div>
+  <div><b>48 h</b><span>2–3 firm mill quotes</span></div>
+  <div><b>₹0</b><span>buyer money held by us</span></div>
+  <div><b>50 kg</b><span>MOQ per colour · 20 kg with pools</span></div>
+</div>
+
 <section>
-  <h2>Why small brands get stuck</h2>
-  <p class="sub">We kept seeing the same four problems, so we built the process around fixing them.</p>
-  <div class="grid">
-    <div class="card"><h3>Ghosting</h3><p>Mills ignore small enquiries or go quiet after the advance.</p></div>
-    <div class="card"><h3>MOQ walls</h3><p>You need 20 kg a colour; the mill needs 50+.</p></div>
-    <div class="card"><h3>Sample ≠ bulk</h3><p>The shade, GSM or print drifts in production and nobody owns it.</p></div>
-    <div class="card"><h3>Hidden costs</h3><p>Screen charges, freight and GST show up after you've said yes.</p></div>
+  <div class="head"><div class="eyebrow">The problem</div><h2 class="serif">Why small brands get stuck</h2><p>We kept hitting the same four problems on real orders, so we built our process around fixing them.</p></div>
+  <div class="grid4">
+    <div class="prob"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M9 10h.01M15 10h.01"/></svg></div><h3>Ghosting</h3><p>Mills ignore small enquiries, or go quiet after the advance.</p><div class="fix">→ We chase. You get updates.</div></div>
+    <div class="prob"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="10" width="18" height="11" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg></div><h3>MOQ walls</h3><p>You need 20 kg a colour; the mill wants 50 kg or more.</p><div class="fix">→ Shade pools share dye lots.</div></div>
+    <div class="prob"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="12" r="5"/></svg></div><h3>Sample ≠ bulk</h3><p>Shade, GSM or print drifts in production and nobody owns it.</p><div class="fix">→ Signed spec with tolerances.</div></div>
+    <div class="prob"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Hidden costs</h3><p>Screens, freight and GST appear after you've said yes.</p><div class="fix">→ One landed price, line by line.</div></div>
   </div>
 </section>
 
 <section id="how">
-  <h2>How it works</h2>
-  <p class="sub">Same five steps for every order.</p>
+  <div class="head"><div class="eyebrow">How it works</div><h2 class="serif">Five steps, same every time</h2><p>You talk to one person. We handle the mill side: spec, samples, follow-ups and checks.</p></div>
   <div class="steps">
-    <div class="step"><div><b>Share your requirement</b><span>Photos and plain words are fine. We work out the Pantone codes, GSM and print method with you.</span></div></div>
-    <div class="step"><div><b>Indicative price in 24 hrs, firm quotes in 48 hrs</b><span>From 2–3 vetted mills, as landed cost: fabric, print, freight and GST on separate lines.</span></div></div>
-    <div class="step"><div><b>Sample / lab dip approval</b><span>A small sample fee, adjusted against your order. Your approval freezes the spec.</span></div></div>
-    <div class="step"><div><b>Production, with updates</b><span>Advance goes straight to the mill. We chase the mill, so you don't have to.</span></div></div>
-    <div class="step"><div><b>Pre-dispatch check, then balance</b><span>Photos, video and a GSM test before you pay the balance. Approved designs are kept on record for repeats.</span></div></div>
+    <div class="st"><div class="n">1</div><h3>Tell us what you need</h3><p>Photos and plain words are fine. We work out the Pantone codes, GSM and print method.</p><span class="t">Day 0</span></div>
+    <div class="st"><div class="n">2</div><h3>Get quotes</h3><p>Indicative price in 24 h, then 2–3 firm, landed quotes from vetted mills.</p><span class="t">Day 1–2</span></div>
+    <div class="st"><div class="n">3</div><h3>Approve the sample</h3><p>Lab dip or strike-off for a small fee, adjusted in your order. Approval freezes the spec.</p><span class="t">~Week 1</span></div>
+    <div class="st"><div class="n">4</div><h3>Production</h3><p>Advance goes straight to the mill's account. We send you progress updates.</p><span class="t">2–4 weeks</span></div>
+    <div class="st"><div class="n">5</div><h3>Check, pay, receive</h3><p>Photos, video and a GSM test before you pay the balance. Designs saved for repeats.</p><span class="t">Delivery</span></div>
   </div>
 </section>
 
 <section id="trust">
-  <h2>Written guarantees, for both sides</h2>
-  <p class="sub">A signed spec sheet takes the guesswork out of the deal for both buyer and mill.</p>
-  <div class="two">
-    <div class="card"><span class="tag">For buyers</span><h3>Your money and design are safe</h3><ul>
-      <li>Only mills we've verified: GST checked, factory video call, certificates.</li>
-      <li>You pay the mill directly in stages. We never hold your money.</li>
-      <li>Signed spec sheet: GSM ±5%, shade matched to your approved lab dip, shrinkage and fastness grades.</li>
-      <li>One landed price per order, with no surprise charges.</li>
-      <li>Your designs stay yours. They're kept on record for your repeats and never sold to others.</li>
-    </ul></div>
-    <div class="card"><span class="tag">For mills</span><h3>Only serious, complete orders</h3><ul>
-      <li>Every enquiry arrives complete: spec, quantity, colours, date, delivery city.</li>
-      <li>Buyers are screened: business proof plus a paid sample fee.</li>
-      <li>Advance before production, balance before dispatch.</li>
-      <li>Rejection only against the signed spec. No last-minute design changes without a re-quote.</li>
-      <li>5% fee only on orders you actually get paid for. One simple agreement.</li>
-    </ul></div>
+  <div class="head"><div class="eyebrow">Guarantees</div><h2 class="serif">Written down, for both sides</h2><p>The deal is protected by a signed spec sheet that both of you approve before production.</p></div>
+  <div class="toggle" role="tablist"><button class="on" data-g="buyers">For buyers</button><button data-g="mills">For mills</button></div>
+  <div class="guar" id="g-buyers">
+    <div class="g"><div class="ck">✓</div><div><h3>Only vetted mills</h3><p>GST checked, a factory video call, certificates on file before any mill gets your order.</p></div></div>
+    <div class="g"><div class="ck">✓</div><div><h3>Your money goes to the mill</h3><p>Pay in stages, against the mill's GST invoice. We never hold your money.</p></div></div>
+    <div class="g"><div class="ck">✓</div><div><h3>Bulk matches the sample</h3><p>GSM ±5%, shade matched to your approved lab dip, shrinkage and fastness grades in writing.</p></div></div>
+    <div class="g"><div class="ck">✓</div><div><h3>Your designs stay yours</h3><p>Kept on record for your repeat orders and never offered to anyone else.</p></div></div>
+  </div>
+  <div class="guar" id="g-mills" hidden>
+    <div class="g"><div class="ck">✓</div><div><h3>Complete enquiries only</h3><p>Spec, quantity, colours, date and delivery city, all in one message.</p></div></div>
+    <div class="g"><div class="ck">✓</div><div><h3>Serious, screened buyers</h3><p>Business proof plus a paid sample fee before anything reaches you.</p></div></div>
+    <div class="g"><div class="ck">✓</div><div><h3>Paid before you dispatch</h3><p>Advance before production, balance before dispatch.</p></div></div>
+    <div class="g"><div class="ck">✓</div><div><h3>Fair rejections only</h3><p>Rejection only against the signed spec. Late design changes get re-quoted.</p></div></div>
+  </div>
+</section>
+
+<section id="source">
+  <div class="head"><div class="eyebrow">What we source</div><h2 class="serif">Knit fabric, garments, and the finishing</h2><p>Tiruppur is India's knitwear capital. We work with mills across the chain.</p></div>
+  <div class="cats">
+    <div class="cat"><div class="tex" style="background-color:#cfe5da"><span>by the kg</span></div><div class="body"><h3>Knit fabric</h3><p>Interlock, single jersey, rib, fleece and loopknit. Combed or organic cotton, 140–340 GSM, dyed or printed.</p></div></div>
+    <div class="cat"><div class="tex" style="background-color:#f3d6c6"><span>by the piece</span></div><div class="body"><h3>Finished garments</h3><p>Tees, oversized tees, polos, hoodies, joggers and baby wear, made to your tech pack or reference.</p></div></div>
+    <div class="cat"><div class="tex" style="background-color:#dcd6ec"><span>finishing</span></div><div class="body"><h3>Print, labels &amp; packing</h3><p>Rotary and digital print, embroidery, woven labels, neck tags and white-label packaging.</p></div></div>
   </div>
 </section>
 
 <section id="pool">
   <div class="pool">
-    <span class="tag">Coming soon</span>
-    <h2>The KnitBridge shade pool</h2>
-    <p class="sub" style="margin-bottom:0">Pick from our shared shade card on standard bases (180 GSM interlock, 240 GSM jersey, 320 GSM fleece). Brands that choose the same shade share one dye lot, so <b>20–30 kg orders</b> become possible. Each pool has a cut-off date and a refundable booking deposit, and runs only when it fills.</p>
-    <div class="swatches" aria-label="Sample pastel shades">
-      <div class="sw" style="background:#BAE5D6"></div><div class="sw" style="background:#FFB59C"></div><div class="sw" style="background:#AFA4CE"></div><div class="sw" style="background:#F5ECD2"></div><div class="sw" style="background:#F6C8D2"></div><div class="sw" style="background:#BCD4EC"></div><div class="sw" style="background:#F3E3A2"></div><div class="sw" style="background:#D9D9D6"></div>
+    <div>
+      <span class="badge">Coming soon</span>
+      <h2 class="serif" style="font-size:clamp(28px,3.4vw,38px);line-height:1.1;margin:4px 0 12px;font-weight:600">The KnitBridge shade pool</h2>
+      <p style="color:var(--muted);margin:0">Small orders, real dye lots. Pick from our shared shade card on standard bases. Brands that choose the same shade share one dyeing run.</p>
+      <ul>
+        <li><b>1</b>Pick shades and a base (180 GSM interlock, 240 GSM jersey, 320 GSM fleece)</li>
+        <li><b>2</b>Book a slot with a refundable deposit before the cut-off date</li>
+        <li><b>3</b>The pool runs once it fills. Orders from 20–30 kg per shade</li>
+      </ul>
     </div>
-    <p style="margin:0;font-size:15px">Interested? Tick "shade pool" in the form below to get the first pool dates.</p>
+    <div class="card-shades" aria-label="Shade card preview">
+      <div><i style="background-color:#BAE5D6"></i><span>Mint</span></div><div><i style="background-color:#FFB59C"></i><span>Peach</span></div><div><i style="background-color:#AFA4CE"></i><span>Lavender</span></div><div><i style="background-color:#F5ECD2"></i><span>Cream</span></div>
+      <div><i style="background-color:#F6C8D2"></i><span>Blush</span></div><div><i style="background-color:#BCD4EC"></i><span>Sky</span></div><div><i style="background-color:#F3E3A2"></i><span>Butter</span></div><div><i style="background-color:#D9D9D6"></i><span>Cloud grey</span></div>
+      <div><i style="background-color:#2f4858"></i><span>Navy</span></div><div><i style="background-color:#7a8b6f"></i><span>Sage</span></div><div><i style="background-color:#c8643b"></i><span>Terracotta</span></div><div><i style="background-color:#1c1c1c"></i><span>Black</span></div>
+    </div>
   </div>
 </section>
 
 <section id="quote">
-  <h2>Get started</h2>
-  <p class="sub">We reply within 24 hours on WhatsApp.</p>
-  <div class="tabs"><button type="button" class="on" data-show="buyer">I'm a brand / buyer</button><button type="button" data-show="mill">I run a mill / factory</button></div>
+  <div class="formwrap">
+    <div class="formside">
+      <div class="head"><div class="eyebrow">Get started</div><h2 class="serif">Tell us what you need</h2><p>Two minutes. We reply on WhatsApp within 24 hours with questions or an indicative price.</p></div>
+      <div class="contact">Prefer to just talk?<br><a class="wa" id="wa" href="https://wa.me/918692041285?text=Hi%20KnitBridge%2C%20I%20have%20a%20sourcing%20requirement"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3z"/></svg>WhatsApp Shivam</a></div>
+    </div>
 
-  <form id="buyer" data-kind="rfq" autocomplete="on">
-    <div class="row">
-      <label>Your name<input name="name" required maxlength="80"></label>
-      <label>Brand / business name<input name="brand" required maxlength="100"></label>
-    </div>
-    <div class="row">
-      <label>WhatsApp number<input name="phone" type="tel" required maxlength="20" placeholder="+91 …"></label>
-      <label>Email <small>(optional)</small><input name="email" type="email" maxlength="120"></label>
-    </div>
-    <div class="row">
-      <label>What do you need?<select name="category" required>
-        <option value="">Choose…</option><option>Knit fabric (by kg)</option><option>Finished garments (by piece)</option><option>Printing / embroidery only</option><option>Not sure yet</option></select></label>
-      <label>Delivery city<input name="city" required maxlength="80"></label>
-    </div>
-    <label>Describe it <small>Product, fabric, GSM if known, colours, print, labels/packaging. Plain words are fine.</small>
-      <textarea name="details" required maxlength="3000" placeholder="e.g. 180-190 GSM cotton interlock, 4 baby prints on pastel base, 40-50 kg per print"></textarea></label>
-    <div class="row">
-      <label>Quantity<input name="quantity" required maxlength="120" placeholder="e.g. 200 kg, or 100 pcs per style"></label>
-      <label>Needed by<input name="needed_by" maxlength="60" placeholder="e.g. mid-December"></label>
-    </div>
-    <div class="row">
-      <label>Target price <small>(optional)</small><input name="target_price" maxlength="80" placeholder="e.g. ₹450/kg or ₹350/pc"></label>
-      <label>GST no. or store/Instagram link<input name="proof" maxlength="200" placeholder="Helps us prioritise serious orders"></label>
-    </div>
-    <label class="check"><input type="checkbox" name="sample_ok" value="yes"> I'm OK paying a small sample / lab-dip fee (adjusted against my order).</label>
-    <label class="check"><input type="checkbox" name="pool" value="yes"> Tell me about the shade pool (small orders from a shared shade card).</label>
-    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <div class="msg" role="status"></div>
-    <button class="btn" type="submit">Send my requirement</button>
-  </form>
+    <div class="formcard">
+      <div class="tabs"><button type="button" class="on" data-show="buyer">I'm a brand / buyer</button><button type="button" data-show="mill">I run a mill</button></div>
 
-  <form id="mill" data-kind="mill" hidden>
-    <div class="row">
-      <label>Mill / company name<input name="company" required maxlength="120"></label>
-      <label>Contact person<input name="name" required maxlength="80"></label>
+      <form id="buyer" data-kind="rfq" autocomplete="on">
+        <div class="row">
+          <label>Your name<input name="name" required maxlength="80"></label>
+          <label>Brand / business<input name="brand" required maxlength="100"></label>
+        </div>
+        <div class="row">
+          <label>WhatsApp number<input name="phone" type="tel" required maxlength="20" placeholder="+91 …"></label>
+          <label>Email <small>optional</small><input name="email" type="email" maxlength="120"></label>
+        </div>
+        <div class="row">
+          <label>What do you need?<select name="category" required>
+            <option value="">Choose…</option><option>Knit fabric (by kg)</option><option>Finished garments (by piece)</option><option>Printing / embroidery only</option><option>Not sure yet</option></select></label>
+          <label>Delivery city<input name="city" required maxlength="80"></label>
+        </div>
+        <label>Describe it <small>Product, fabric, GSM if known, colours, print, labels. Plain words are fine.</small>
+          <textarea name="details" required maxlength="3000" placeholder="e.g. 180-190 GSM cotton interlock, 4 baby prints on pastel base, 40-50 kg per print"></textarea></label>
+        <div class="row">
+          <label>Quantity<input name="quantity" required maxlength="120" placeholder="200 kg, or 100 pcs per style"></label>
+          <label>Needed by <small>optional</small><input name="needed_by" maxlength="60" placeholder="mid-December"></label>
+        </div>
+        <div class="row">
+          <label>Target price <small>optional</small><input name="target_price" maxlength="80" placeholder="₹450/kg or ₹350/pc"></label>
+          <label>GST no. or store link <small>helps us prioritise</small><input name="proof" maxlength="200"></label>
+        </div>
+        <label class="check"><input type="checkbox" name="sample_ok" value="yes"> I'm OK paying a small sample / lab-dip fee, adjusted against my order.</label>
+        <label class="check"><input type="checkbox" name="pool" value="yes"> Tell me when the first shade pool opens.</label>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="msg" role="status"></div>
+        <button class="btn" type="submit">Send my requirement</button>
+      </form>
+
+      <form id="mill" data-kind="mill" hidden>
+        <div class="row">
+          <label>Mill / company<input name="company" required maxlength="120"></label>
+          <label>Contact person<input name="name" required maxlength="80"></label>
+        </div>
+        <div class="row">
+          <label>WhatsApp number<input name="phone" type="tel" required maxlength="20"></label>
+          <label>City<input name="city" required maxlength="80" placeholder="Tiruppur"></label>
+        </div>
+        <div class="row">
+          <label>GSTIN<input name="gst" maxlength="20"></label>
+          <label>Certifications <small>optional</small><input name="certs" maxlength="200" placeholder="GOTS, OEKO-TEX, SEDEX…"></label>
+        </div>
+        <label>What you make <small>Fabrics/garments, GSM range, print types</small><textarea name="details" required maxlength="3000"></textarea></label>
+        <div class="row">
+          <label>Minimum order<input name="moq" maxlength="120" placeholder="50 kg per colour / 100 pcs"></label>
+          <label>Typical lead time<input name="lead_time" maxlength="80"></label>
+        </div>
+        <label class="check"><input type="checkbox" name="terms_ok" value="yes" required> I'm open to KnitBridge's 5% introduction fee, payable only on paid orders from buyers KnitBridge introduces.</label>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="msg" role="status"></div>
+        <button class="btn" type="submit">Join the network</button>
+      </form>
     </div>
-    <div class="row">
-      <label>WhatsApp number<input name="phone" type="tel" required maxlength="20"></label>
-      <label>City<input name="city" required maxlength="80" placeholder="e.g. Tiruppur"></label>
-    </div>
-    <div class="row">
-      <label>GSTIN<input name="gst" maxlength="20"></label>
-      <label>Certifications <small>(optional)</small><input name="certs" maxlength="200" placeholder="GOTS, OEKO-TEX, SEDEX…"></label>
-    </div>
-    <label>What you make <small>Fabrics/garments, GSM range, print types</small><textarea name="details" required maxlength="3000"></textarea></label>
-    <div class="row">
-      <label>Minimum order<input name="moq" maxlength="120" placeholder="e.g. 50 kg per colour / 100 pcs"></label>
-      <label>Typical lead time<input name="lead_time" maxlength="80"></label>
-    </div>
-    <label class="check"><input type="checkbox" name="terms_ok" value="yes" required> I'm open to KnitBridge's 5% introduction fee, payable only on paid orders from buyers KnitBridge introduces.</label>
-    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <div class="msg" role="status"></div>
-    <button class="btn" type="submit">Join the network</button>
-  </form>
+  </div>
 </section>
 
 <section>
-  <h2>Questions</h2>
-  <details><summary>Who pays you?</summary><p>The mill pays us a 5% introduction fee on orders they get paid for. Quotes and sourcing are free for buyers.</p></details>
-  <details><summary>Do you hold my money?</summary><p>No. You pay the mill directly, against their GST invoice, in stages (advance after sample approval, balance after the pre-dispatch check).</p></details>
-  <details><summary>What's the minimum order?</summary><p>Usually 50 kg per colour for custom-dyed fabric and 50–100 pcs per style for garments. Our shade pool will bring fabric down to 20–30 kg on shared shades.</p></details>
-  <details><summary>What if bulk doesn't match the sample?</summary><p>Every order has a signed spec sheet with tolerances and your approved lab dip or strike-off. If bulk falls outside it, the mill fixes or replaces it, and we mediate within 48 hours.</p></details>
-  <details><summary>Can you ship outside India?</summary><p>Yes, for garment orders we can quote with export freight. Ask in the form.</p></details>
+  <div class="head"><div class="eyebrow">Questions</div><h2 class="serif">Good to know</h2></div>
+  <div class="faq">
+    <details><summary>Who pays you?</summary><p>The mill pays us a 5% introduction fee on orders they get paid for. Quotes and sourcing are free for buyers.</p></details>
+    <details><summary>Do you hold my money?</summary><p>No. You pay the mill directly, against their GST invoice, in stages: advance after sample approval, balance after the pre-dispatch check.</p></details>
+    <details><summary>What's the minimum order?</summary><p>Usually 50 kg per colour for custom-dyed fabric and 50–100 pieces per style for garments. Shade pools will bring fabric down to 20–30 kg on shared shades.</p></details>
+    <details><summary>What if bulk doesn't match the sample?</summary><p>Every order has a signed spec sheet with tolerances and your approved lab dip or strike-off. If bulk falls outside it, the mill fixes or replaces it, and we mediate within 48 hours.</p></details>
+    <details><summary>Can you ship outside India?</summary><p>Yes. For garment orders we can quote with export freight. Mention it in the form.</p></details>
+  </div>
 </section>
+</main>
 
-<footer>KnitBridge · Sourcing from Tiruppur, Tamil Nadu · Run by Shivam Pal · <a id="wa" href="https://wa.me/918692041285?text=Hi%20KnitBridge%2C%20I%20have%20a%20sourcing%20requirement">WhatsApp us</a></footer>
-</div>
+<footer><div class="wrap f">
+  <div><a class="logo" href="#"><span class="logo-mark"><svg width="18" height="16" viewBox="0 0 18 16" fill="none"><path d="M2 2 L9 13 L16 2" stroke="#fdfaf4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="serif">KnitBridge</span></a><div style="margin-top:10px;opacity:.8">Sourcing from Tiruppur, Tamil Nadu · Run by Shivam Pal</div></div>
+  <div style="align-self:flex-end"><a href="#quote">Get a quote</a> · <a href="https://wa.me/918692041285">WhatsApp</a></div>
+</div></footer>
 
 <script>
 const WA = 'https://wa.me/918692041285?text=';
 let API = '';
 fetch('config.json', {cache: 'no-store'}).then(r => r.ok ? r.json() : {}).then(c => { API = c.api || ''; }).catch(() => {});
+
+const top = document.getElementById('top');
+addEventListener('scroll', () => top.classList.toggle('scrolled', scrollY > 8), {passive: true});
 
 function show(which) {
   for (const b of document.querySelectorAll('.tabs button')) b.classList.toggle('on', b.dataset.show === which);
@@ -221,6 +421,12 @@ function show(which) {
 }
 for (const b of document.querySelectorAll('.tabs button')) b.onclick = () => show(b.dataset.show);
 for (const a of document.querySelectorAll('[data-tab]')) a.addEventListener('click', () => show(a.dataset.tab));
+
+for (const b of document.querySelectorAll('.toggle button')) b.onclick = () => {
+  for (const x of document.querySelectorAll('.toggle button')) x.classList.toggle('on', x === b);
+  document.getElementById('g-buyers').hidden = b.dataset.g !== 'buyers';
+  document.getElementById('g-mills').hidden = b.dataset.g !== 'mills';
+};
 
 for (const form of document.querySelectorAll('form')) {
   form.addEventListener('submit', async (e) => {

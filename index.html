@@ -198,14 +198,15 @@ footer .logo{color:#fff}
 
 /* ===== cloth theme ===== */
 :root{
+  --linen:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E %3Cfilter id='w' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9 0.035' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.40 0 0 0 0 0.33 0 0 0 0 0.22 0 0 0 0.55 -0.12'/%3E%3C/filter%3E %3Cfilter id='f' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035 0.9' numOctaves='3' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.40 0 0 0 0 0.33 0 0 0 0 0.22 0 0 0 0.5 -0.12'/%3E%3C/filter%3E %3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='2' seed='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.47 0 0 0 0 0.33 0 0 0 0.35 -0.1'/%3E%3C/filter%3E %3Crect width='240' height='240' filter='url(%23n)'/%3E %3Crect width='240' height='240' filter='url(%23w)' opacity='0.55'/%3E %3Crect width='240' height='240' filter='url(%23f)' opacity='0.5'/%3E %3C/svg%3E");
   --weave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M0 1.5h6M0 4.5h6' stroke='%23786a52' stroke-opacity='.07' stroke-width='1'/%3E%3Cpath d='M1.5 0v6M4.5 0v6' stroke='%23786a52' stroke-opacity='.05' stroke-width='1'/%3E%3C/svg%3E");
   --stitch:rgba(31,92,76,.35);
   --pink:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;
 }
-body{background-color:var(--bg);background-image:var(--weave)}
-header.top{background-image:var(--weave)}
+body{background-color:var(--bg);background-image:var(--weave),var(--linen);background-size:6px 6px,240px 240px}
+header.top{background-image:var(--weave),var(--linen);background-size:6px 6px,240px 240px}
 /* every card is a swatch with a stitched seam */
-.prob,.g,.cat,.contact,.pool,.formcard,.sheet{background-image:var(--weave);outline:1.5px dashed var(--stitch);outline-offset:-9px}
+.prob,.g,.cat,.contact,.pool,.formcard,.sheet{background-image:var(--weave),var(--linen);background-size:6px 6px,240px 240px;outline:1.5px dashed var(--stitch);outline-offset:-9px}
 .btn{outline:1.5px dashed rgba(253,250,244,.55);outline-offset:-5px}
 .btn.ghost{outline-color:var(--stitch)}
 /* woven label eyebrows */
